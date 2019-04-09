@@ -9,22 +9,17 @@ class CountView extends React.Component {
             count: 0,
         }
     }
-    
+
     render() {
-        const count = this.state.count;
         return(
-            
         <div className="game-info">
-             <div>{this.state.count}</div>
+             <div>{count}</div>
              <Increment
-             onClick={() => this.sumOnClick()}
-              />
+              count = {this.state}
+              onClick = {() => this.setState({value: count + 1})}
+            />
         </div>
         );
-    }
-
-    sumOnClick(){
-        this.setState({count: this.state.count + 1})
     }
 }
 
@@ -32,7 +27,7 @@ function Increment (props) {
     return(
         <button className = "square" 
         onClick = {props.onClick}>
-            {props.value}
+            {props.count}
         </button>
     )
 }
