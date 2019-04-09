@@ -9,6 +9,7 @@ class CountView extends React.Component {
             count: 0,
         }
     }
+    //
 
     render() {
         return(
